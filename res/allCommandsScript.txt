@@ -1,0 +1,16 @@
+load res/Mikko.ppm mikko
+flip-horizontal mikko mikko-edited
+flip-vertical mikko-edited mikko-edited
+brighten 20 mikko-edited mikko-edited
+greyscale-red mikko-edited mikko-edited
+greyscale-green mikko-edited mikko-edited
+greyscale-blue mikko-edited mikko-edited
+greyscale-intensity mikko-edited mikko-edited
+greyscale-value mikko-edited mikko-edited
+greyscale-luma mikko-edited mikko-edited
+blur mikko-edited mikko-edited
+sharpen mikko-edited mikko-edited
+color-luma mikko-edited mikko-edited
+color-sepia mikko-edited mikko-edited
+save scriptCommandsImages/mikko-edited.ppm mikko-edited
+q

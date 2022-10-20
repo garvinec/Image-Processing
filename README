@@ -1,0 +1,88 @@
+Hello! Welcome to Garvin and Aden's Image Editing Program!
+
+Our image editor features command design pattern.
+
+Pixel:
+Our first design choice to help implement the command design pattern was to create an Object class
+that represents a pixel (Pixel class). This class would help store and access the information read
+from a ppm in a more convenient way. The class would create Pixel objects which store the 3
+important values to a pixel, its r, g, and b components. The class allows for easy access to these
+components when necessary.
+
+Model:
+Our model is mostly used to retain or store information about an image that is passed to it.
+It allows for convenient storage of the pixels of the image as a 2D Array of Pixels, and it allows
+access to data about the image such as its height, width, and the Pixel at any coordinate of the
+image.
+It is easily extendable to incorporate support for any type of image including and beyond a ppm.
+
+Features/Commands:
+In order to add additional flexibility to editing "methods" we decided to implement the command
+design pattern. Each type command or action would be its own class and implement an interface with
+(so far) one method that executed the class's action/command. Important information would be passed
+into the one method as arguments such as the model (which stores all the image data). This way,
+each class will have its own implementation of how to edit the image to do what it's named after,
+and all the design has to do is call the one execute method on it, to get the desired changes.
+
+View:
+So far the few only has one task, which is the helpful messages such as the welcome message, help
+menu, and updates on tasks.
+
+Controller:
+Our controller has three methods. The load image method was placed under the controller class
+because that method would take in the image the user wants to operate on. The save image method was
+placed under the controller class as well because it returns the image the user operated on.
+Inside the run method, we have a switch that handles all possible user input. We have basic
+operations such as quit and a help input for directions of use. Additionally, for commands
+to execute, we have a hashmap as a field of the controller that stores all possible commands.
+The key is a command that the user types, and the corresponding value is the object of the command
+that is returned. After the value has been returned, the one modify() method is called on the object
+and the command will then be executed with the correct model given to the modify() method. This
+model is apart of the stored "images" Hashmap field of the controller that stores and image loaded
+or edited by the user.
+
+
+Sources:
+Mikko.ppm was a photo taken by Aden, and Aden has full permission from Mikko to use this image.
+
+Directions for Script.txt use:
+Select ImageProcessingProgram as the main class and type "res/allCommandsScript.txt"
+in the command line, once you press apply and run, then it should execute the Script.
+If you are running the script from the Jar, then you should just type "allCommandsScript.txt"
+as the Jar is in the same folder as the script.
+
+Design Choice Changes:
+Although our previous design choice was given the OK from the two TA's that graded our work, we
+decided that it would be more SOLID and extension friendly to instead make every single command
+its own class and have it implement the Features/command interface with the one "modify" or "apply"
+method in it. Additionally, we've taken out the fields of each of the features/commands and opted
+to instead pass in a model that it would work on rather than contain the model as a field of a
+created object. We felt that this new design would allow for looser coupling between the
+model and features classes in addition to allow for easy extension with minimal modification. To
+add an additional feature/command, all you would have to do is create a new class that implements
+the features interface and implement the new operations carried out under the "modify" method.
+
+The only thing existing that you would need to modify to make this command accessible would be the
+Controller implementation class as it has a field that is a hashmap that contains all possible
+commands to be typed and the corresponding object functions they should create and execute. This
+new implementation would be easier to add as you are only slightly modifying the helper method to
+add to the hashmap rather than adding a new case to the switch to handle the new command. Also,
+it would reduce the need to modify an existing general command class and add a case for that.
+
+Also, we have changed the run() method in the controller. Instead of a switch case handling all the
+command inputs, we have opted to store all the commands inside a hashmap that is now a field of the
+controller. This allows for "one case" that can handle all valid command user inputs. We decided
+to change this to a hashmap because it would allow for easier modification if new commands or
+functions were to be added in the future. Instead of needing to make a new case and create all the
+objects in that case (which was repeated), we only now need to add the new command to the hashmap
+with the call for that command (key) in the right syntax. This makes extending the design easier
+and helps object SOLID principles more as now to extend the design, less of already existing code
+has to be changed, and it also reduces code repetition and redundancy.
+
+In addition to changing the command design, we added two new classes, Load and Save. These classes
+allow for the loading and saving of new additional formats on top of ppm. These new formats are
+jpg, png, and bmp.
+
+
+
+

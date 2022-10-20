@@ -1,0 +1,53 @@
+This program allows user to edit an image file in various ways, including flipping,
+creating a greyscale image, brightening, blurring, and sharpening an image.
+
+Here are the commands the user could use:
+
+<1> Load an image.
+Use this command to load an image. This command should be used before any operations below in order
+to have the content of the image saved in the program.
+Command: blur <destination image name> <source image name>
+Example: blur testImages/image.png image
+
+<2> Flip an image.
+Use this command to flip an image horizontally or vertically.
+Command: flip-<direction> <destination image name> <source image name>
+Example: flip-vertical testImages/image.png image
+
+<3> Brighten/Darken an image.
+Use this command to make an image brighter or darker by a specified amount.
+Command: brighten <level of brightness/darkness> <destination image name> <source image name>
+Note: Use a negative number if you want to darken the image instead of brightening it.
+Example: brighten 10 testImages/image.png image
+
+<4> Create a greyscale image of an image.
+Use this command to create a greyscale image with the specified component.
+Command: greyscale-<the component to greyscale> <destination image name> <source image name>
+Note: This program allows user to create an greyscale image with 7 different components - red,
+green, blue, intensity, luma, value, and sepia.
+Example: greyscale-red testImages/image.png image
+
+<5> Blur an image.
+Use this command to blur an image.
+Command: blur <destination image name> <source image name>
+Example: blur testImages/image.png image
+
+<6> Sharpen an image.
+Use this command to sharpen an image.
+Command: sharpen <destination image name> <source image name>
+Example: sharpen testImages/image.png image
+
+<7> Color Transformation.
+Use this command to transform the color tone of the image, luma to create greyscale and sepia to
+create a reddish brown tone.
+Command (Greyscale): color-luma <destination image name> <source image name>
+Note: This command creates the same result as using the command:
+greyscale-luma <destination image name> <source image name>
+Example: color-luma testImages/image.png image
+Command (Sepia): color-sepia <destination image name> <source image name>
+Example: color-sepia testImages/image.png image
+
+<8> Save an image.
+Use this command to save an image at the specified location.
+Command: save <destination image name> <source image name>
+Example: save testImages/image.png image
