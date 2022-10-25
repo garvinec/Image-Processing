@@ -1,7 +1,5 @@
 package cs3500.imageeditor;
 
-import cs3500.imageeditor.controller.ImageEditorController;
-import cs3500.imageeditor.controller.ImageEditorControllerImpl;
 import cs3500.imageeditor.controller.gui.ImageEditorGUIController;
 import cs3500.imageeditor.controller.gui.ImageEditorGUIControllerImpl;
 import cs3500.imageeditor.model.ImageEditorModel;

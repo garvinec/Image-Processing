@@ -26,7 +26,6 @@ import cs3500.imageeditor.model.ImageEditorModel;
 import cs3500.imageeditor.model.ImageEditorModelImp;
 import cs3500.imageeditor.view.gui.ImageEditorGUI;
 import java.awt.Color;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -164,6 +163,7 @@ public class ImageEditorGUIControllerImpl implements ImageEditorGUIController,
         break;
 
       case "jpg":
+      case "jpeg":
         model = new ImageEditorModelImp(readConventional(path));
         fileFormat = "jpg";
         break;
