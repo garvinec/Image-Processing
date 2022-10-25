@@ -208,9 +208,9 @@ public class ImageEditorGUIControllerImpl implements ImageEditorGUIController,
 
     switch (e.getActionCommand()) {
       case "Open file": {
-        final JFileChooser fchooser = new JFileChooser(".");
+        final JFileChooser fchooser = new JFileChooser();
         fchooser.setAcceptAllFileFilterUsed(true);
-        int retvalue = fchooser.showOpenDialog(view);
+        int retvalue = fchooser.showOpenDialog(null);
         if (retvalue == JFileChooser.APPROVE_OPTION) {
           File f = fchooser.getSelectedFile();
           loadPath = f.getAbsolutePath();
@@ -224,7 +224,7 @@ public class ImageEditorGUIControllerImpl implements ImageEditorGUIController,
         break;
       }
       case "Save file": {
-        final JFileChooser fchooser = new JFileChooser(".");
+        final JFileChooser fchooser = new JFileChooser();
         fchooser.setAcceptAllFileFilterUsed(false);
         FileNameExtensionFilter jpgFilter = new FileNameExtensionFilter(
             "JPG", "jpg");
